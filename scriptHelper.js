@@ -35,14 +35,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   } else {
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is not ready for launch`;
   }
-   document.getElementById("pilotStatus").style.visibility = "visible";
   //check co-pilot status 
   if (validateInput(copilot) === "Not a Number") {
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`;
   } else {
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is not ready for launch`;
   }
-   document.getElementById("copilotStatus").style.visibility = "visible";
   //check fuel status
   if (validateInput(fuelLevel) === "Is a Number") {
     if (fuelLevel >= 10000) {
@@ -53,7 +51,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   } else {
     document.getElementById("fuelStatus").innerHTML = `Please submit a number`;//not sure
   }
-   document.getElementById("fuelStatus").style.visibility = "visible";
   //check cargo mass
   if (validateInput(cargoLevel) === "Is a Number") {
     if (cargoLevel < 10000) {
@@ -64,9 +61,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   } else {
     document.getElementById("cargoStatus").innerHTML = `Please submit a number`;//not sure
   }
-   document.getElementById("cargoStatus").style.visibility = "visible";
-  // document.getElementById("faultyItems").style.visibility = "visible";
-  //document.getElementById("faultyItems").style.visibility = "visible";
+  document.getElementById(list).style.visibility = "visible";
 }
 
 async function myFetch() {
