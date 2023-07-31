@@ -33,14 +33,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   if (validateInput(pilot) === "Not a Number") {
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`;
   } else {
-    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is not ready for launch`;
+    document.getElementById("pilotStatus").innerHTML = `Please submit a name`;
   }
+   // document.getElementById("pilotStatus").style.visibility = "visible";
   //check co-pilot status 
   if (validateInput(copilot) === "Not a Number") {
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`;
   } else {
-    document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is not ready for launch`;
+    document.getElementById("copilotStatus").innerHTML = `Please submit a name`;
   }
+   // document.getElementById("copilotStatus").style.visibility = "visible";
   //check fuel status
   if (validateInput(fuelLevel) === "Is a Number") {
     if (fuelLevel >= 10000) {
@@ -51,6 +53,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   } else {
     document.getElementById("fuelStatus").innerHTML = `Please submit a number`;//not sure
   }
+   // document.getElementById("fuelStatus").style.visibility = "visible";
   //check cargo mass
   if (validateInput(cargoLevel) === "Is a Number") {
     if (cargoLevel < 10000) {
@@ -59,7 +62,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
      document.getElementById("cargoStatus").innerHTML = `Cargo mass too high for launch`;
     }
   } else {
-    document.getElementById("cargoStatus").innerHTML = `Please submit a number`;//not sure
+    document.getElementById("cargoStatus").innerHTML = `Please submit a number`;
   }
   document.getElementById(list).style.visibility = "visible";
 }
